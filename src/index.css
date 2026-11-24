@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #020712;
+    color: #e2e8f0;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0b2e59;
+    border-radius: 4px;
+    border: 1px solid rgba(34, 211, 238, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+  }
+}
+
+/* Glassmorphism styling */
+.glass-panel {
+  background: rgba(4, 13, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-glow {
+  background: rgba(6, 22, 45, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.15), inset 0 0 15px rgba(34, 211, 238, 0.05);
+}
+
+/* Underwater caustic light ray animation */
+.underwater-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: 
+    linear-gradient(115deg, transparent 40%, rgba(34, 211, 238, 0.08) 45%, transparent 50%),
+    linear-gradient(135deg, transparent 35%, rgba(6, 182, 212, 0.06) 42%, transparent 48%),
+    radial-gradient(ellipse at 50% 0%, rgba(34, 211, 238, 0.2) 0%, transparent 60%);
+  animation: causticWave 12s ease-in-out infinite alternate;
+}
+
+@keyframes causticWave {
+  0% {
+    opacity: 0.6;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03) translateY(-10px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(0.98) translateY(5px);
+  }
+}
+
+/* Water surface reflection */
+.water-surface-glow {
+  background: radial-gradient(circle at 50% -20%, rgba(34, 211, 238, 0.35), transparent 70%);
+}
+
+/* Text glow */
+.text-cyan-glow {
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.4), 0 0 40px rgba(245, 158, 11, 0.2);
+}
+
+/* Button pulse glow */
+.btn-glow {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  transition: all 0.3s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.7);
+  transform: translateY(-2px);
+}
