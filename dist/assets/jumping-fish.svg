@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none" class="filter drop-shadow-[0_10px_25px_rgba(0,242,254,0.4)]">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#ffb703" />
+      <stop offset="35%" stop-color="#fb8500" />
+      <stop offset="70%" stop-color="#d62828" />
+      <stop offset="100%" stop-color="#9d0208" />
+    </linearGradient>
+    <linearGradient id="finGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffedd5" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#fdba74" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="glowAqua" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="fishGlow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Tail Fin - Flowing and curved in jump -->
+  <g class="tail-fin">
+    <path d="M220 120 C 255 100, 290 85, 310 105 C 295 125, 295 150, 315 170 C 285 160, 250 150, 220 135 Z" fill="url(#finGrad)" />
+    <!-- Fin rays -->
+    <path d="M225 125 Q 260 115 305 107" stroke="#fff" stroke-width="1" opacity="0.6" stroke-dasharray="2 2" />
+    <path d="M225 128 Q 265 130 295 135" stroke="#fff" stroke-width="1" opacity="0.6" stroke-dasharray="2 2" />
+    <path d="M225 132 Q 260 148 310 167" stroke="#fff" stroke-width="1" opacity="0.6" stroke-dasharray="2 2" />
+  </g>
+
+  <!-- Dorsal Fin (Top) -->
+  <path d="M120 78 C 150 50, 200 65, 225 105 C 190 98, 150 90, 120 78 Z" fill="url(#finGrad)" />
+  <path d="M135 72 Q 170 65 215 95" stroke="#fff" stroke-width="1" opacity="0.5" />
+
+  <!-- Ventral/Anal Fin (Bottom) -->
+  <path d="M140 138 C 175 165, 210 155, 222 135 C 195 136, 165 138, 140 138 Z" fill="url(#finGrad)" />
+
+  <!-- Main Body (Arched jumping silhouette) -->
+  <path d="M45 105 C 75 60, 160 65, 230 125 C 185 155, 105 150, 45 105 Z" fill="url(#bodyGrad)" filter="url(#fishGlow)" />
+
+  <!-- Scales & Shimmer Highlights -->
+  <path d="M85 88 Q 95 82 105 88 Q 115 82 125 88" stroke="#fef08a" stroke-width="1.5" fill="none" opacity="0.8" />
+  <path d="M100 100 Q 110 94 120 100 Q 130 94 140 100 Q 150 94 160 100" stroke="#fef08a" stroke-width="1.5" fill="none" opacity="0.8" />
+  <path d="M115 112 Q 125 106 135 112 Q 145 106 155 112 Q 165 106 175 112" stroke="#fef08a" stroke-width="1.5" fill="none" opacity="0.8" />
+  <path d="M130 124 Q 140 118 150 124 Q 160 118 170 124" stroke="#fef08a" stroke-width="1.5" fill="none" opacity="0.8" />
+
+  <!-- Lateral line iridescent glow -->
+  <path d="M60 104 C 110 88, 170 98, 220 125" stroke="url(#glowAqua)" stroke-width="2" fill="none" opacity="0.85" />
+
+  <!-- Pectoral Fin (Foreground) -->
+  <path d="M90 112 C 105 135, 125 145, 140 135 C 130 122, 115 115, 90 112 Z" fill="url(#finGrad)" />
+  <path d="M96 116 Q 115 132 135 133" stroke="#fff" stroke-width="1" opacity="0.7" />
+
+  <!-- Head & Gill Details -->
+  <path d="M85 92 C 78 100, 78 115, 88 122" stroke="#7f1d1d" stroke-width="2" fill="none" opacity="0.7" />
+  <!-- Barbels (Arowana whiskers) -->
+  <path d="M46 102 C 35 100, 30 104, 25 102" stroke="#fde047" stroke-width="1.8" stroke-linecap="round" fill="none" />
+  <path d="M46 107 C 37 108, 32 113, 26 112" stroke="#fde047" stroke-width="1.8" stroke-linecap="round" fill="none" />
+
+  <!-- Eye -->
+  <circle cx="62" cy="96" r="6" fill="#fef08a" stroke="#d97706" stroke-width="1.5" />
+  <circle cx="60" cy="96" r="3.5" fill="#0f172a" />
+  <circle cx="59" cy="94" r="1.2" fill="#ffffff" />
+
+  <!-- Water Drops Clinging -->
+  <circle cx="48" cy="88" r="2.5" fill="#00f2fe" opacity="0.9" />
+  <circle cx="78" cy="72" r="3" fill="#bae6fd" opacity="0.8" />
+  <circle cx="160" cy="68" r="2" fill="#00f2fe" opacity="0.8" />
+  <circle cx="240" cy="115" r="3" fill="#e0f2fe" opacity="0.9" />
+</svg>

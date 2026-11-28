@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deep-ocean: #020712;
+  --mid-ocean: #051838;
+  --aqua-glow: #00f2fe;
+  --aqua-secondary: #4facfe;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--deep-ocean);
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(0, 242, 254, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 15% 50%, rgba(29, 114, 221, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(0, 242, 254, 0.06) 0%, transparent 55%),
+    linear-gradient(180deg, #020712 0%, #030e22 35%, #051838 70%, #020712 100%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #020712;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f2fe, #1d72dd);
+  border-radius: 9999px;
+  border: 2px solid #020712;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+}
+
+/* Ambient Underwater Caustics Effect */
+.ocean-caustics {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  background: 
+    radial-gradient(ellipse 60% 40% at 50% 20%, rgba(0, 242, 254, 0.25), transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 60%, rgba(79, 172, 254, 0.2), transparent 70%);
+  filter: blur(40px);
+  animation: causticsWobble 16s ease-in-out infinite alternate;
+}
+
+@keyframes causticsWobble {
+  0% {
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.08) translateY(-25px) rotate(1.5deg);
+  }
+  100% {
+    transform: scale(1.02) translateY(15px) rotate(-1.5deg);
+  }
+}
+
+/* Floating Bubbles Upwards Animation */
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.8), rgba(0, 242, 254, 0.3) 60%, rgba(0, 102, 235, 0.15) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.6);
+  animation: floatUpward linear infinite;
+}
+
+@keyframes floatUpward {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-115vh) translateX(var(--wobble, 30px)) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Fish Tail Wiggle */
+@keyframes tailWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+.tail-animated {
+  transform-origin: left center;
+  animation: tailWiggle 1.4s ease-in-out infinite;
+}
+
+/* Water Splash Ring Animation */
+@keyframes waterSplashRipple {
+  0% {
+    transform: scale(0.2);
+    opacity: 1;
+    border-width: 4px;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+.splash-ripple {
+  animation: waterSplashRipple 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(3, 14, 34, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 242, 254, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 242, 254, 0.15);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(8, 35, 78, 0.5) 0%, rgba(3, 14, 34, 0.75) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 242, 254, 0.12);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 242, 254, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 242, 254, 0.22);
+}
+
+/* Text Shimmer Glow */
+.text-shimmer {
+  background: linear-gradient(90deg, #ffffff 0%, #00f2fe 30%, #4facfe 70%, #ffffff 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textShimmerMove 6s linear infinite;
+}
+
+@keyframes textShimmerMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Subtle Water Surface Reflection */
+.water-surface-line {
+  position: relative;
+  overflow: hidden;
+}
+.water-surface-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.8), #ffffff, rgba(0, 242, 254, 0.8), transparent);
+  animation: surfaceGlint 8s infinite linear;
+}
+
+@keyframes surfaceGlint {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}

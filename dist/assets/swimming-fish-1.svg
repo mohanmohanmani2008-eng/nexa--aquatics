@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" fill="none">
+  <defs>
+    <linearGradient id="neonFishGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="60%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#0052d4" />
+    </linearGradient>
+    <linearGradient id="neonTail1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <!-- Tail -->
+  <path d="M100 40 C 120 20, 145 10, 155 18 C 145 35, 148 45, 158 60 C 145 70, 120 60, 100 40 Z" fill="url(#neonTail1)" />
+  <!-- Body -->
+  <path d="M18 40 C 35 22, 75 22, 102 40 C 75 58, 35 58, 18 40 Z" fill="url(#neonFishGrad1)" />
+  <!-- Eye -->
+  <circle cx="34" cy="37" r="3" fill="#ffffff" />
+  <circle cx="33" cy="37" r="1.5" fill="#020712" />
+  <!-- Fin -->
+  <path d="M50 42 C 60 52, 72 52, 75 44 C 65 41, 55 41, 50 42 Z" fill="#38bdf8" opacity="0.75" />
+</svg>

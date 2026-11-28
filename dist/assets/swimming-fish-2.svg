@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" fill="none">
+  <defs>
+    <linearGradient id="goldFishGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="goldTail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <!-- Tail -->
+  <path d="M98 40 C 115 15, 142 8, 154 22 C 140 38, 142 42, 156 58 C 138 72, 115 62, 98 40 Z" fill="url(#goldTail)" />
+  <!-- Body -->
+  <path d="M16 40 C 32 20, 72 20, 100 40 C 72 60, 32 60, 16 40 Z" fill="url(#goldFishGrad)" />
+  <!-- Dorsal fin -->
+  <path d="M50 25 C 65 14, 85 18, 92 28 Z" fill="#fb923c" opacity="0.6" />
+  <!-- Eye -->
+  <circle cx="32" cy="36" r="3" fill="#ffffff" />
+  <circle cx="31" cy="36" r="1.5" fill="#431407" />
+  <!-- Fin -->
+  <path d="M48 42 C 58 54, 70 54, 72 45 Z" fill="#fde047" opacity="0.8" />
+</svg>
